@@ -143,8 +143,7 @@ def activities():
 
     return response
 
-
-app.route('/activities/<int:id>', methods = ['DELETE'])
+@app.route('/activities/<int:id>', methods = ['DELETE'])
 def activity_by_id(id):
 
     activity = Activity.query.filter(Activity.id == id).first()
@@ -172,6 +171,7 @@ def activity_by_id(id):
         )
 
         return response
+    
 
 @app.route('/signups', methods = ['POST'])
 def signups():
